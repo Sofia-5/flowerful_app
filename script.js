@@ -5,7 +5,7 @@ const plantApp = {};
 plantApp.token = "TFQqgRN3_95KQCSBiSlLBUHUv0_kOs8zieHRszg1ETE";
 
 // declare global variable for API url
-plantApp.apiurl = "https://jcrnvvhxxbihrgzl6jy6lksac40eoodl.lambda-url.us-east-2.on.aws/";
+plantApp.apiurl = "https://64jaew2zosr6g2sg5virqkwnkq0zllht.lambda-url.us-east-1.on.aws";
 
 // declare global variable for api pagination
 plantApp.page = 1;
@@ -125,33 +125,20 @@ plantApp.deleteItem = (plantID) => {
 plantApp.getPlants = async (clr) => {
   const results = await fetch(`${plantApp.apiurl}?token=${plantApp.token}&clr=${clr}&page=${plantApp.page}`)
   const response = await results.json();
-  
-  // if no results come up show error message
   if (!response.data.length) {
     $(".confirmationCard").html("No plants found with that color!");
     $("input:text").val("");
   } else {
     plantApp.displayPlants(response);
-  } 
-}  
+  }
+};
 
-
-// second api call to pull more detailed object avialable for individual species
-plantApp.getMoreInfo = (plantID) => {
-  $.ajax({
-    url: "https://proxy.hackeryou.com",
-    dataType: "json",
-    method: "GET",
-    data: {
-      reqUrl: `https://trefle.io/api/v1/species/${plantID}`,
-      params: {
-        token: plantApp.token,
-      },
-    },
-  }).then(function (moreApiResults) {
-    // begin second append function for new data
-    plantApp.displayMoreInfo(moreApiResults);
-  });
+// second api call to pull more detailed objet avialable for individual species
+plantApp.getMoreInfo = async (plantID) => {
+  const results = await fetch(`${plantApp.apiurl}?token=${plantApp.token}&plantID=${plantID}`)
+  const response = await results.json();
+  // begin second append function for new data
+  plantApp.displayMoreInfo(response);
 };
 
 plantApp.displayMoreInfo = (plantInfo) => {
