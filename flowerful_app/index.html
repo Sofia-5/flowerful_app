@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta
+      name="Description"
+      content="Flowerful is a color coordination tool for gardens built with HTML5, CSS3, SCSS, Firebase and jQuery by Spencer Davis and Sofia Lau-Alves in a paired programming environment. Users can search for a color and find all plants bearing that color stored in the Trefle API, then save their favourites to a Firebase realtime database."
+    />
+    <title>The Perfect Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bef9dc9aad.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <i class="fas fa-bars menuButton" tabindex="0"></i>
+      <div class="sideList">
+        <h2>Favourite Plants</h2>
+        <ul class="desiredPlantsList divHider">
+          <!-- dynamic content goes here -->
+        </ul>
+        <div class='listButtonWrapper'>
+          <button class="clearList divHider" aria-label="clear favourites list">Clear List</button>
+        </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <h1>Flowerful</h1>
+        <form class="desiredColour">
+          <label for="plantColour"
+            >I am looking for plants in the colour of</label
+          >
+          <input type="text" id="plantColour" placeholder="colour" autocomplete="off" required/>
+        
+          <input type="submit" class="submit"></input>
+        </form>
+        <p class="instructions">Write your desired plant colour in the field above to find color-coordinated plants for your garden! Once found, the plants can be added to your favourites list found by clicking the menu icon above using the "add to favourites" button on the reverse of each plant card. You can then access your favourites from any computer!</p>
+        <span class="confirmationCard divHider">Request received! Gathering plants...</span>
+      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#81B29A" fill-opacity="1" d="M0,224L48,240C96,256,192,288,288,272C384,256,480,192,576,181.3C672,171,768,213,864,240C960,267,1056,277,1152,261.3C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"><title>wave element</title><desc>A green sine wave extends the apparent area of the main content</desc></path></svg>
+    </header>
+    
+    <main>
+      <div class="wrapper">
+        <div class="results">
+          <!-- Dynamic data goes here -->
+        </div>
+        <div class="loadMoreButton">
+          <button class="loadMore divHider" aria-label="fetch more plants from api"> More plants? </button>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3D405B" fill-opacity="1" d="M0,224L48,240C96,256,192,288,288,272C384,256,480,192,576,181.3C672,171,768,213,864,240C960,267,1056,277,1152,261.3C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"><title>wave element</title><desc>A blue sine wave extends the apparent area of the footer</desc></path></svg>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <p>Copyright &copy; 2020 Flowerful</p>
+        <p>
+          Created @
+          <a href="https://junocollege.com/" target="_blank">Juno College</a>
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
