@@ -254,4 +254,3 @@ $(function () {
   plantApp.init();
 });
 
-// TESTING GIT PUSH
