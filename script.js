@@ -5,7 +5,7 @@ const plantApp = {};
 plantApp.token = "TFQqgRN3_95KQCSBiSlLBUHUv0_kOs8zieHRszg1ETE";
 
 // declare global variable for API url
-plantApp.apiurl = "https://64jaew2zosr6g2sg5virqkwnkq0zllht.lambda-url.us-east-1.on.aws";
+plantApp.apiurl = "https://jcrnvvhxxbihrgzl6jy6lksac40eoodl.lambda-url.us-east-2.on.aws/";
 
 // declare global variable for api pagination
 plantApp.page = 1;
