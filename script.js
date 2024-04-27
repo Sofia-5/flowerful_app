@@ -253,3 +253,5 @@ plantApp.dbRef = firebase.database().ref();
 $(function () {
   plantApp.init();
 });
+
+// TESTING GIT PUSH
